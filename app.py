@@ -26,16 +26,5 @@ def hello():
     return message
 
 
-@app.route("/read")
-def read_file():
-    # Read the message from the file
-    if os.path.exists(file_path):
-        with open(file_path, "r") as file:
-            message = file.read()
-        return f"Message from file: {message}"
-    else:
-        return "File not found."
-
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000)
