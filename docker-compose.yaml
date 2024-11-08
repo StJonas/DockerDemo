@@ -4,16 +4,16 @@ services:
   app:
     build: .
     volumes:
-      - app_data:/data  # Named volume
+      - ./data:/data
     ports:
-      - "8000:8000"  # Map port 8000 on the host to port 8000 in the container
+      - "8000:8000" 
     depends_on:
       - redis
 
   redis:
     image: "redis:alpine"
     ports:
-      - "6379:6379"  # Map port 6379 on the host to port 6379 in the container
+      - "6379:6379"
 
 volumes:
   app_data:
